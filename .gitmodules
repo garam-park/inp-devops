@@ -1,6 +1,8 @@
 [submodule "ops/dev0"]
 	path = ops/dev0
 	url = git@github.com:innopam/dev0.git
+	branch = main
 [submodule "projects/gis-sass"]
 	path = projects/gis-sass
 	url = git@github.com:innopam/gis-sass.git
+	branch = develop
