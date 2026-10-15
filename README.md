@@ -14,4 +14,10 @@ git clone --recurse-submodules git@github.com:garam-park/inp-devops.git
 git submodule update --init ops/dev0
 ```
 
+커밋 훅(markdownlint) 걸기, 처음 한 번:
+
+```sh
+mise trust && mise install && mise exec -- lefthook install
+```
+
 규칙은 `AGENTS.md`.
