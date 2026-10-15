@@ -10,3 +10,7 @@
 	path = projects/Jeju-subsidence-AI
 	url = git@github.com:innopam/Jeju-subsidence-AI.git
 	branch = main
+[submodule "projects/official-website"]
+	path = projects/official-website
+	url = git@github.com:innopam/official-website.git
+	branch = release
