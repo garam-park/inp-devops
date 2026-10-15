@@ -6,3 +6,7 @@
 	path = projects/gis-sass
 	url = git@github.com:innopam/gis-sass.git
 	branch = develop
+[submodule "projects/Jeju-subsidence-AI"]
+	path = projects/Jeju-subsidence-AI
+	url = git@github.com:innopam/Jeju-subsidence-AI.git
+	branch = main
