@@ -5,6 +5,7 @@ Innopam 작업 공간. 클러스터 운영 저장소와 제품 저장소를 서�
 
 - `ops/dev0` → innopam/dev0 (dev0 클러스터 운영)
 - `projects/gis-sass` → innopam/gis-sass (GIS 제품)
+- `projects/official-website` → innopam/official-website (회사 홈페이지, Next.js)
 
 받기:
 
