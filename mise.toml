@@ -1,0 +1,17 @@
+# 커밋 훅에 쓰는 도구. 처음 한 번: mise trust && mise install && mise exec -- lefthook install
+# 버전은 ops/dev0/mise.toml 과 같게 둔다. 서브모듈 안에서는 그쪽 mise.toml 이 우선한다.
+[tools]
+lefthook = "2.2.1"
+# markdownlint-cli2 는 npm 패키지라 node 가 필요하다.
+node = "24"
+"npm:markdownlint-cli2" = "0.23.3"
+
+# 저장소 전체 린트: mise run lint. 커밋 훅(lefthook.yml)은 스테이징된 파일만 본다.
+# git ls-files 는 서브모듈 안으로 내려가지 않으므로 ops/, projects/ 는 자연히 빠진다.
+[tasks.lint]
+description = "저장소 전체 린트"
+depends = ["lint:md"]
+
+[tasks."lint:md"]
+description = "Markdown (markdownlint-cli2, 규칙은 .markdownlint-cli2.jsonc)"
+run = "git ls-files -z '*.md' | xargs -0 markdownlint-cli2"
