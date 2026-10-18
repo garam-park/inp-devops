@@ -7,7 +7,6 @@
 - `ops/<클러스터>`: 클러스터 운영 저장소. 예: `ops/dev0` → innopam/dev0
 - `projects/<제품>`: 제품 저장소. 예: `projects/gis-sass` → innopam/gis-sass
 - `docs/history/`: 이 저장소에 남기는 작업 기록
-- 비밀값, kubeconfig, 백업처럼 git 에 넣지 않는 파일은 `~/ops/inp/local/`에 둔다.
 
 ## 원칙
 
