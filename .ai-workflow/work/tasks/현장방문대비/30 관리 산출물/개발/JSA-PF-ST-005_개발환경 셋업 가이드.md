@@ -7,13 +7,14 @@
 | 분류 | 표준·환경 |
 | 버전 | V0.1 |
 | 작성일 | 2026-10-16 |
-| 작성자 / 승인자 | 개발팀 / <mark>확인 필요</mark> |
+| 작성자 | 박가람 |
+| 승인자 | - |
 
 ## 제·개정 이력
 
 | 버전 | 날짜 | 변경 내용 | 작성자 | 승인자 |
 | --- | --- | --- | --- | --- |
-| 0.1 | 2026-10-16 | 최초 작성 | 개발팀 | <mark>확인 필요</mark> |
+| 0.1 | 2026-10-16 | 최초 작성 | 박가람 | - |
 
 이 문서는 통합플랫폼 저장소(`gis-sass`)의 개발·테스트 환경을 만드는 절차다. 제주 지반침하 프로토타입(`Jeju-subsidence-AI`)은 참조 기준 자료이며 통합플랫폼 빌드와 무관하므로 별도 절(3.2)에서 실행 방법만 적는다.
 
@@ -84,7 +85,7 @@ npm --prefix app install
 npm --prefix app run dev
 ```
 
-원본 GIS 자료를 다시 받아 값을 고칠 때만 데이터 변환 단계가 필요하다(원본 자료는 저장소에 없고 경로는 `tools/gislib.py` 위쪽에 모아 두었다. 이 경로는 개발자 개인 PC 의 절대 경로이므로 본인 환경에 맞게 고친 뒤 실행한다).
+원본 GIS 자료를 다시 받아 값을 고칠 때만 데이터 변환 단계가 필요하다(원본 자료 경로는 `tools/gislib.py` 위쪽에 모아 두었으니 본인 환경에 맞게 고친 뒤 실행한다).
 
 ```bash
 python3 -m venv .venv && ./.venv/bin/pip install pyshp pyproj shapely openpyxl
@@ -101,7 +102,7 @@ python3 -m venv .venv && ./.venv/bin/pip install pyshp pyproj shapely openpyxl
   curl -fsS http://localhost:8081/actuator/health   # {"groups":["liveness","readiness"],"status":"UP"}  (status 가 UP 이면 정상)
   ```
 
-- 인증 smoke(12 시나리오, 현재 기준 38 PASS): `API_BASE=http://localhost:18080/api scripts/smoke-auth.sh` — 종료 코드 0 이면 모두 통과.
+- 인증 smoke(12 시나리오, 38 개 검사): `API_BASE=http://localhost:18080/api scripts/smoke-auth.sh` — 종료 코드 0 이면 모두 통과.
 - 테스트(영역별 명령은 `docs/TESTING.md` 가 단일 출처):
 
   | 영역 | 명령 |

@@ -28,15 +28,13 @@
 
 | 언어 | 포맷터·린터 | 설정 파일 | 비고 |
 | --- | --- | --- | --- |
-| Java | 없음(미도입). 정적분석·포맷터 설정이 저장소에 없다. 테스트 커버리지는 JaCoCo | `apps/*/api/**/build.gradle.kts`, `packages/api-core/build.gradle.kts` (JaCoCo 설정만) | Java 25(Temurin) · Spring Boot 4.1 · Gradle 9.7(Kotlin DSL). API 는 `api-core` 를 컴포지트 빌드로 공유 |
-| TypeScript | 컴파일러 엄격 옵션(`strict`, `noUnusedLocals`, `noUnusedParameters`). ESLint·Prettier 는 미도입 | `apps/customer/web/tsconfig.json`, `apps/admin/web/tsconfig.json`, `packages/web-core/tsconfig.json` | Node 24 · Vite · React 18. 빌드 `tsc -b && vite build`, 테스트 Vitest |
+| Java | 테스트 커버리지 JaCoCo | `apps/*/api/**/build.gradle.kts`, `packages/api-core/build.gradle.kts` | Java 25(Temurin) · Spring Boot 4.1 · Gradle 9.7(Kotlin DSL). API 는 `api-core` 를 컴포지트 빌드로 공유 |
+| TypeScript | 컴파일러 엄격 옵션(`strict`, `noUnusedLocals`, `noUnusedParameters`) | `apps/customer/web/tsconfig.json`, `apps/admin/web/tsconfig.json`, `packages/web-core/tsconfig.json` | Node 24 · Vite · React 18. 빌드 `tsc -b && vite build`, 테스트 Vitest |
 | PHP | 없음(미도입) | — | 마이그레이션·시드 실행 전용(Laravel database 컴포넌트, 런타임 이미지는 PHP 8.4, `composer.json` 의 하한 선언은 `^8.2`). 제품 로직은 PHP 에 없다 |
 | Markdown | markdownlint-cli2 0.23.3 | 저장소 루트 `.markdownlint-cli2.jsonc` | CI `docs` 잡이 린트와 문서 링크 검사(`scripts/check-doc-links.py`)를 실행 |
-| Python | 없음 | — | 보조 스크립트용. 모듈 이름은 `snake_case` |
+| Python | - | - | 보조 스크립트용. 모듈 이름은 `snake_case` |
 
-자동 포맷터와 언어별 정적분석은 아직 도입하지 않았다(2026-10-16 확인). 이름·계층 규칙을 검사하는 테스트나 린터도 없어서 이 규칙들은 6절 셀프 리뷰 체크리스트로만 확인한다. 이 체크리스트는 저장소의 PR 템플릿에 아직 없다(JSA-PF-ST-003). 테스트가 지키는 것은 로그 비밀 비노출(5절), 응답 envelope·`X-Api-Version` 헤더·비멤버 404 같은 일부 동작 규칙이다.
-
-현재 코드는 3절의 변수·매개변수(`snake_case`)와 내부용 멤버(`_` 접두사) 규칙과 다르다(2026-10-16 확인). Java 는 DTO 와 `AuthLogContext`(인증 로그 컨텍스트)를 제외한 변수·매개변수·필드가 `camelCase` 이고(예: `JwtService.issueAccessToken(Long userId, …)`), `AuthLogContext` 는 `requestId` 를 뺀 레코드 컴포넌트와 빌더 필드가 로그 키와 같은 `snake_case`(`user_id`, `refresh_token_id` 등)이다. TypeScript 는 `camelCase` 와 `snake_case` 가 섞여 있으며, 두 언어 모두 직접 작성한 코드에는 `_` 접두사 멤버가 없다(예외는 e2e 가 지도 인스턴스를 읽도록 `MapView` 가 컨테이너 요소에 붙이는 `__inp_map` 속성 하나뿐이다. `dagger develop` 이 만드는 `dagger/sdk/` 생성 코드는 제외했고, `_e`·`_url` 같은 미사용 매개변수 이름은 멤버가 아니므로 세지 않았다). `snake_case` 가 일관된 곳은 JSON 필드·DTO 레코드 컴포넌트·DB 컬럼(예: `SourceResponse.has_auth_secret`)뿐이다. 기존 코드에 소급 적용할지와 도구 도입 여부는 <mark>확인 필요</mark>.
+이름·계층 규칙은 6절 코드 리뷰 체크리스트로 확인한다. 로그 비밀 비노출(5절), 응답 envelope·`X-Api-Version` 헤더·비멤버 404 같은 동작 규칙은 테스트로 확인한다.
 
 ## 3. 이름 규칙
 
@@ -52,14 +50,11 @@
 | URL 경로 | `kebab-case`, 리소스 이름은 복수형 | `/order-items`, `/users/{id}` |
 | 내부용 멤버 | 모든 언어에서 `_` 접두사 | `_cache`, `_buildQuery()` |
 
-변수·매개변수 행과 내부용 멤버 행은 현재 코드와 다르다(2절).
-
 ## 4. 주석·문서화
 
-- 코드 주석 작성 규칙은 별도 문서로 정해져 있지 않다(<mark>확인 필요</mark>).
 - 결정의 근거는 코드 주석이 아니라 ADR(`docs/01.개발/ADRs/`)에, API 계약은 `docs/01.개발/APIs/` 에, 테스트 절차는 `docs/TESTING.md` 에 남긴다. 설계서는 "무엇이 어떻게 되어 있는가", ADR 은 "왜 그렇게 정했는가"로 역할을 나눈다.
 - 커밋 본문에는 "무엇"이 아니라 "왜"를 적는다(JSA-PF-ST-002).
-- 문서는 한국어로 작성한다. 비밀값·개인정보를 문서에 넣지 않는다(규칙 문서에 명시된 항목은 아니며 JSA-PF-ST-002 5절의 비밀값 커밋 항목과 같은 방침이다).
+- 문서는 한국어로 작성한다. 비밀값·개인정보를 문서에 넣지 않는다(JSA-PF-ST-002 5절의 비밀값 커밋 금지와 같은 방침이다).
 
 ## 5. 오류 처리·로깅
 
@@ -68,25 +63,24 @@
 - **예외는 진입 경계의 공통 핸들러에서만 잡는다.** 중간 계층은 복구할 수 있을 때(재시도·대체값·보상)만 catch 하고, 빈 catch 나 로그만 찍고 계속 진행하는 catch(삼키기)는 쓰지 않는다.
 - API 응답은 성공·실패 모두 `code` + `message` + `result` envelope 이며, `code` 앞 3자리는 HTTP 상태와 같다(예: `404001`). 비멤버에게는 403 이 아니라 404 를 준다(존재 은닉).
 - 로그는 필드 기반 JSON 한 줄로 남기고(운영 프로필 `prod`), 모든 로그에 `request_id` 를 포함한다. 메시지에 값을 문자열로 섞지 않고 필드로 분리한다.
-- **비밀번호·토큰·개인정보는 로그에 남기지 않는다.** 감사·인증 로그 컨텍스트에 비밀번호·토큰·인증키로 보이는 필드가 생기면 실패하는 회귀 테스트가 있다(`AuditLogPrivacyTest`, `AuthLogPrivacyTest`). 필드 이름 기준의 검사라서 개인정보는 대상이 아니다. `SourceResponsePrivacyTest` 는 로그가 아니라 소스 응답 DTO 에 외부 인증키 값 필드가 없는지(설정 여부 `has_auth_secret` 만 허용)를 지키는 테스트다.
+- **비밀번호·토큰·개인정보는 로그에 남기지 않는다.** 감사·인증 로그 컨텍스트에 비밀번호·토큰·인증키로 보이는 필드가 생기면 실패하는 회귀 테스트가 있다(`AuditLogPrivacyTest`, `AuthLogPrivacyTest`). `SourceResponsePrivacyTest` 는 로그가 아니라 소스 응답 DTO 에 외부 인증키 값 필드가 없는지(설정 여부 `has_auth_secret` 만 허용)를 지키는 테스트다.
 - 로그 레벨: `ERROR` 는 사람의 조치가 필요한 예상 밖 실패만, `WARN` 은 비정상이지만 동작에 지장 없는 경우(4xx 는 원칙적으로 WARN 이하), `INFO` 는 주요 이벤트, `DEBUG` 는 개발·진단용(운영 기본 INFO).
 
 ## 6. 코드 리뷰 체크리스트
 
-머지 전 셀프 리뷰에서 diff 를 처음부터 끝까지 읽으며 아래를 확인한다. 항목 끝에 근거 규칙을 적었고, 규칙 문서에 근거가 없는 항목은 그렇게 표시했다.
+머지 전 셀프 리뷰에서 diff 를 처음부터 끝까지 읽으며 아래를 확인한다. 항목 끝에 근거를 적었다.
 
-- [ ] 이름이 표기 규칙을 따른다(변수 `snake_case`, 함수 `camelCase`, 타입 `PascalCase`, 상수 `UPPER_SNAKE_CASE`, 단위 접미사). 변수·내부용 멤버 표기는 현재 코드와 달라 소급 적용 여부가 미정이다(2절). — `naming.md`
+- [ ] 이름이 표기 규칙을 따른다(변수 `snake_case`, 함수 `camelCase`, 타입 `PascalCase`, 상수 `UPPER_SNAKE_CASE`, 단위 접미사). — `naming.md`
 - [ ] `controller → service → repository` 방향만 쓰고, 다른 도메인은 service 로만 접근한다. `shared/` 에 도메인 지식이 들어가지 않았다. — `project-structure.md`
 - [ ] 실패를 예외로 전파하고 삼키는 catch 가 없다. `get` 은 없으면 예외, `find` 는 없으면 null 이다. — `error-logging.md`
 - [ ] 인가 판정이 service 계층의 명시적 가드에 있고, 비멤버는 404 로 응답한다. — ADR-2026-08-18.01
 - [ ] 응답이 `code`·`message`·`result` envelope 이고 `X-Api-Version` 헤더를 지킨다. 새 오류 코드는 코드표에 반영했다. — `rest-api.md`
 - [ ] 로그에 비밀·토큰·개인정보가 없고 `request_id` 가 포함되며 레벨 기준을 지켰다. — `error-logging.md`
 - [ ] 테스트가 given-when-then 구조와 한국어 문장 이름을 따르고, mock 은 외부 경계에만 썼다. 버그 수정에는 재현 테스트를 남겼다. — `test.md`
-- [ ] 관련 문서(API 문서·ADR·설계서·`docs/TESTING.md`)를 갱신했다. — 규칙 문서에 명시 없음(JSA-PF-ST-003 의 DoD 기본안)
+- [ ] 관련 문서(API 문서·ADR·설계서·`docs/TESTING.md`)를 갱신했다. — JSA-PF-ST-003 2절(Definition of Done)
 - [ ] 이해하지 못한 줄(특히 AI 가 생성한 코드)은 머지하지 않는다. — `pull-request.md`
 
 ## 7. 근거 자료
 
 - `docs/rules/coding/naming.md`, `project-structure.md`, `rest-api.md`, `error-logging.md`, `test.md` (gis-sass 저장소)
 - `docs/rules/workflow/pull-request.md` (gis-sass 저장소)
-- 도구 설정 확인: 저장소 전체에서 ESLint·Prettier·Spotless·Checkstyle·Pint·`.editorconfig` 설정 파일이 없음을 2026-10-16 에 검색으로 확인
