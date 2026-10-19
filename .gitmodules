@@ -14,3 +14,11 @@
 	path = projects/official-website
 	url = git@github.com:innopam/official-website.git
 	branch = release
+[submodule "projects/jeju-ai-saas-be"]
+	path = projects/jeju-ai/jeju-ai-saas-be
+	url = git@github.com:innopam/jeju-ai-saas-be.git
+	branch = develop
+[submodule "projects/jeju-ai-saas-fe"]
+	path = projects/jeju-ai/jeju-ai-saas-fe
+	url = git@github.com:innopam/jeju-ai-saas-fe.git
+	branch = develop
