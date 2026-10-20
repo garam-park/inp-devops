@@ -7,13 +7,13 @@
 | 분류 | 표준·환경 |
 | 버전 | V0.1 |
 | 작성일 | 2026-10-16 |
-| 작성자 / 승인자 | 개발팀 / <mark>확인 필요</mark> |
+| 작성자 / 승인자 | 김재헌 / 박가람 |
 
 ## 제·개정 이력
 
 | 버전 | 날짜 | 변경 내용 | 작성자 | 승인자 |
 | --- | --- | --- | --- | --- |
-| 0.1 | 2026-10-16 | 최초 작성 | 개발팀 | <mark>확인 필요</mark> |
+| 0.1 | 2026-10-16 | 최초 작성 | 김재헌 | 박가람 |
 
 ## 1. 원칙
 
@@ -30,7 +30,6 @@
 | --- | --- | --- | --- |
 | Java | 테스트 커버리지 JaCoCo | `apps/*/api/**/build.gradle.kts`, `packages/api-core/build.gradle.kts` | Java 25(Temurin) · Spring Boot 4.1 · Gradle 9.7(Kotlin DSL). API 는 `api-core` 를 컴포지트 빌드로 공유 |
 | TypeScript | 컴파일러 엄격 옵션(`strict`, `noUnusedLocals`, `noUnusedParameters`) | `apps/customer/web/tsconfig.json`, `apps/admin/web/tsconfig.json`, `packages/web-core/tsconfig.json` | Node 24 · Vite · React 18. 빌드 `tsc -b && vite build`, 테스트 Vitest |
-| PHP | 없음(미도입) | — | 마이그레이션·시드 실행 전용(Laravel database 컴포넌트, 런타임 이미지는 PHP 8.4, `composer.json` 의 하한 선언은 `^8.2`). 제품 로직은 PHP 에 없다 |
 | Markdown | markdownlint-cli2 0.23.3 | 저장소 루트 `.markdownlint-cli2.jsonc` | CI `docs` 잡이 린트와 문서 링크 검사(`scripts/check-doc-links.py`)를 실행 |
 | Python | - | - | 보조 스크립트용. 모듈 이름은 `snake_case` |
 
