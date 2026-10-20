@@ -4,7 +4,7 @@ Innopam 작업 공간. 클러스터 운영 저장소와 제품 저장소를 서�
 실제 내용은 각 서브모듈에 있고, 이 저장소는 그것들을 어느 커밋에서 함께 보는지만 기록한다.
 
 - `ops/dev0` → innopam/dev0 (dev0 클러스터 운영)
-- `projects/official-website` → innopam/official-website (회사 홈페이지, Next.js)
+- `projects/inp/official-website` → innopam/official-website (회사 홈페이지, Next.js)
 - `projects/jeju-ai/apps/jeju-ai-saas-be` → innopam/jeju-ai-saas-be (제주 지반침하 SaaS 서버)
 - `projects/jeju-ai/apps/jeju-ai-saas-fe` → innopam/jeju-ai-saas-fe (제주 지반침하 SaaS 화면, React)
 - `projects/jeju-ai/repos/gis-sass` → innopam/gis-sass (GIS 제품)
