@@ -1,0 +1,10 @@
+// CSAP 해설서 원본·요약·양식은 Obsidian 형식으로 들여온 외부 자료다 (T097 결정 E).
+// 원문 대조를 위해 줄바꿈·frontmatter 뒤 callout·HTML 을 그대로 두고, 이 세 규칙만 끈다.
+// 나머지 규칙과 루트 설정(MD013 외)은 그대로 적용된다.
+{
+  "config": {
+    "MD013": false,
+    "MD041": false,
+    "MD033": false
+  }
+}
