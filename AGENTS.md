@@ -5,7 +5,7 @@
 ## 구조
 
 - `ops/<클러스터>`: 클러스터 운영 저장소. 예: `ops/dev0` → innopam/dev0
-- `projects/<제품>`: 제품 저장소. 예: `projects/gis-sass` → innopam/gis-sass
+- `projects/<제품>`: 제품 저장소. 예: `projects/jeju-ai/repos/gis-sass` → innopam/gis-sass
 - `docs/history/`: 이 저장소에 남기는 작업 기록
 
 ## 원칙

@@ -1,7 +1,7 @@
 # 지반침하 스마트관리 시스템 — 프로토타입을 제품으로: FE/BE 분리 설계안
 
 - 기준일: 2026-10-17
-- 대상: [`projects/Jeju-subsidence-AI`](../../../projects/Jeju-subsidence-AI/) (서브모듈, 커밋 `129d660`)
+- 대상: [`projects/jeju-ai/repos/jeju-subsidence-ai`](../../../projects/jeju-ai/repos/jeju-subsidence-ai/) (서브모듈, 커밋 `129d660`)
 - 읽는 사람: 이 제품을 FE/BE 로 나눠 구현할 개발자
 - 상태: 초안. **코드는 바꾸지 않았다.** 결정이 필요한 항목은 [05 §4](05.migration-plan.md#4-열린-결정)에 모았다.
 
@@ -94,6 +94,6 @@ PUPPETEER_SKIP_DOWNLOAD=1 npx -y -p @mermaid-js/mermaid-cli@11.4.2 mmdc \
 
 ## 함께 볼 것
 
-- 자매 제품 [gis-sass `AGENTS.md`](../../../projects/gis-sass/AGENTS.md) — `apps/*` + `packages/*` 배치, chart 구조, web-core 의 인증·API 클라이언트 패턴을 이 설계가 따른다. 단 gis-sass 의 BE 는 Java/Spring 이라 `api-core` 는 공유하지 않는다.
+- 자매 제품 [gis-sass `AGENTS.md`](../../../projects/jeju-ai/repos/gis-sass/AGENTS.md) — `apps/*` + `packages/*` 배치, chart 구조, web-core 의 인증·API 클라이언트 패턴을 이 설계가 따른다. 단 gis-sass 의 BE 는 Java/Spring 이라 `api-core` 는 공유하지 않는다.
 - dev0 [k8s-c4.md](../../../ops/dev0/docs/architecture/k8s-c4.md) — 배포 대상 클러스터의 구조(Cilium Ingress, Longhorn, 네임스페이스 쿼터).
 - ws [AGENTS.md](../../../AGENTS.md) — 제품 배포 설정은 클러스터 저장소(`ops/dev0/apps/<제품>/`)에, 차트·이미지는 게시된 버전으로.

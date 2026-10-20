@@ -3,11 +3,11 @@
 	url = git@github.com:innopam/dev0.git
 	branch = main
 [submodule "projects/gis-sass"]
-	path = projects/gis-sass
+	path = projects/jeju-ai/repos/gis-sass
 	url = git@github.com:innopam/gis-sass.git
 	branch = develop
 [submodule "projects/Jeju-subsidence-AI"]
-	path = projects/Jeju-subsidence-AI
+	path = projects/jeju-ai/repos/jeju-subsidence-ai
 	url = git@github.com:innopam/Jeju-subsidence-AI.git
 	branch = main
 [submodule "projects/official-website"]
