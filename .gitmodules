@@ -22,3 +22,7 @@
 	path = projects/jeju-ai/apps/jeju-ai-saas-fe
 	url = git@github.com:innopam/jeju-ai-saas-fe.git
 	branch = develop
+[submodule "ops/gov-ncloud"]
+	path = ops/gov-ncloud
+	url = git@github.com:inp-solution/gov-ncloud.git
+	branch = main
