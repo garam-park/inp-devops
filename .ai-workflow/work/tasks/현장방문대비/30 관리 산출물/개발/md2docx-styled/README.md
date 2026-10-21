@@ -23,4 +23,5 @@ mermaid 블록이 있는 문서(DS-002, DS-003, OP-001)는 세 번째 인자로 
 
 - `reference-A.docx`: 스타일 템플릿(`make_reference.py` 로 pandoc 기본 템플릿에서 생성).
 - `tablewidths.lua`: 표 열 폭 계산 필터.
+- `bake_tables.py`: 표 헤더 배경·테두리와 코드 블록 서식을 스타일이 아니라 각 셀·문단에 직접 넣는다. Google Drive 미리보기 등 표 스타일을 무시하는 뷰어에서도 같은 모양으로 보이게 하며, `build.sh` 가 변환 뒤에 자동으로 실행한다.
 - `mermaid.lua`: mermaid 블록을 렌더링된 PNG 로 교체.
