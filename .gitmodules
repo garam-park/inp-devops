@@ -26,6 +26,10 @@
 	path = ops/gov-ncloud
 	url = git@github.com:inp-solution/gov-ncloud.git
 	branch = main
+[submodule "projects/porthole"]
+	path = projects/porthole
+	url = git@github.com:innopam/ws-jeju-porthole.git
+	branch = main
 [submodule "projects/goyang-uam"]
 	path = projects/goyang-uam
 	url = git@github.com:innopam/ws-goyang-uam.git
