@@ -2,7 +2,7 @@
 
 - 기준: 2026-10-22. `projects/goyang-uam` 은 `develop`(`0b3c78c8`, 0단계 뒤), `projects/porthole` 은 `develop`(`325b9c9`).
 - 요청: `projects/goyang-uam`(innopam/ws-goyang-uam)을 `projects/porthole`(innopam/ws-jeju-porthole)과 같은 "프로젝트 작업 공간" 구조로 **전체 이동**한다. 실행 전에 이 계획을 먼저 세운다.
-- 상태: **1 · 2 · 3단계 끝(10-22, [기록 11](../../../../docs/history/2026/10/22/11.goyang-uam-porthole-layout-step1-3.md)). PR #165 열림(커밋 6개), 머지 대기.** 머지 전에 열린 PR 안내([notice-open-prs.md](notice-open-prs.md))를 사용자가 보낸다. D14 반영([기록 12](../../../../docs/history/2026/10/22/12.goyang-uam-gitleaks-tracked-files.md)), D15 는 goyang-uam 작업 T002 로. 결정 15개 모두 끝.
+- 상태: **1 · 2 · 3단계 끝(10-22, [기록 11](../../../../docs/history/2026/10/22/11.goyang-uam-porthole-layout-step1-3.md)). PR #165 머지됨(`08639a25`), ws 고정 커밋 갱신, 기록 [13](../../../../docs/history/2026/10/22/13.goyang-uam-porthole-layout-merged.md). 이 계획은 끝. 남은 것은 goyang-uam 안의 후속 작업.** #128 안내는 사용자가 직접 한다. D14 반영([기록 12](../../../../docs/history/2026/10/22/12.goyang-uam-gitleaks-tracked-files.md)), D15 는 goyang-uam 작업 T002 로. 결정 15개 모두 끝.
 - 함께 읽을 것
   - porthole 의 규칙: [AGENTS.md](../../../../projects/porthole/AGENTS.md), [folder-structure.md](../../../../projects/porthole/.ai-workspace/docs/folder-structure.md), [tasks.md](../../../../projects/porthole/.ai-workspace/docs/tasks.md), [adr.md](../../../../projects/porthole/.ai-workspace/docs/adr.md)
   - goyang-uam 의 지금 규칙: [AGENTS.md](../../../../projects/goyang-uam/AGENTS.md), [README.md](../../../../projects/goyang-uam/README.md)
