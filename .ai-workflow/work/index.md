@@ -6,7 +6,8 @@
 - 다른 작업
   - CSAP 인증준비: [tasks/CSAP-인증준비/index.md](tasks/CSAP-인증준비/index.md)
   - 현장방문대비: [tasks/현장방문대비/](tasks/현장방문대비/)
-  - 이 문서는 그 둘의 현황을 다루지 않는다.
+  - goyang-uam 구조변경(porthole 구조로 전체 이동, 계획 단계): [tasks/goyang-uam-구조변경/index.md](tasks/goyang-uam-구조변경/index.md)
+  - 이 문서는 그 셋의 현황을 다루지 않는다.
 
 ## 1. 한눈에 — 지반침하 스마트관리 시스템 (jeju-ai-saas)
 

@@ -1,0 +1,86 @@
+.ai-workflow/docs/README.md: ../README.md
+.ai-workflow/docs/lxprod-deploy-checklist.md: ../../../repos/gygo-svc3d-back-uamms/src/main/java/lx/svcauth/config/SecurityConfig.java
+.ai-workflow/docs/lxprod-deploy-checklist.md: ../../../repos/gygo-svc3d-back-uamms/src/main/resources/mapper/primary/auth.xml
+.ai-workflow/docs/lxprod-deploy-checklist.md: ../../../repos/gygo-svc3d-front-uamms/default.conf
+.ai-workflow/docs/lxprod-deploy-checklist.md: ../../../repos/gygo-svc3d-front-uamms/src/constants/api.ts
+.ai-workflow/docs/lxprod-deploy-checklist.md: ../README.md
+.ai-workflow/work/.archived/20261014-simulation2/index.md: ../../docs/research/simulation2-decisions-20261002/decision-agenda.md
+.ai-workflow/work/.archived/20261014-simulation2/index.md: ../../docs/simulation2/README.md
+.ai-workflow/work/.archived/20261014-simulation2/index.md: tasks/.archived/06-결정-없이-진행한-작업.md
+.ai-workflow/work/.archived/20261014-simulation2/tasks/01-합사-배포-확인.md: ../../../docs/tasks/20261001/goyang-sample.scenario.json
+.ai-workflow/work/.archived/20261014-simulation2/tasks/01-합사-배포-확인.md: ../../../docs/tasks/20261001/goyang-sample.scenario2.json
+.ai-workflow/work/.archived/20261014-simulation2/tasks/02-주기-기체간-충돌.md: ../../../docs/decisions/0043-simulation2-scenario-format-v7-vertiport-stands-aircraft-clearance.md
+.ai-workflow/work/.archived/20261014-simulation2/tasks/02-주기-기체간-충돌.md: ../../../docs/research/simulation2-decisions-20261002/decision-agenda.md
+.ai-workflow/work/.archived/20261014-simulation2/tasks/02-주기-기체간-충돌.md: ../../../docs/simulation2/avoidance.md
+.ai-workflow/work/.archived/20261014-simulation2/tasks/02-주기-기체간-충돌.md: ../../../docs/simulation2/schedule.md
+.ai-workflow/work/.archived/20261014-simulation2/tasks/03-실행-결과-비교.md: ../../../docs/simulation2/data-model.md
+.ai-workflow/work/.archived/20261014-simulation2/tasks/03-실행-결과-비교.md: ../../../docs/simulation2/schedule.md
+.ai-workflow/work/.archived/20261014-simulation2/tasks/05-밀린-정리.md: ../../../docs/simulation2/README.md
+.ai-workflow/work/.archived/20261014-simulation2/tasks/05-밀린-정리.md: ../../../docs/tasks/20261001/simulation2-데이터-설계.md
+.ai-workflow/work/.archived/20261014-simulation2/tasks/05-밀린-정리.md: .archived/06-결정-없이-진행한-작업.md
+.ai-workflow/work/.archived/20261014-simulation2/tasks/06-결정-없이-진행한-작업.md: ../02-주기-기체간-충돌.md
+.ai-workflow/work/.archived/20261014-simulation2/tasks/06-결정-없이-진행한-작업.md: ../03-실행-결과-비교.md
+.ai-workflow/work/.archived/20261014-simulation2/tasks/06-결정-없이-진행한-작업.md: ../04-지도-요소-편집.md
+.claude/rules/rule_notion-task-interpretation.md: rule_task-management.md
+AGENTS.md: rules/rule_adr.md
+AGENTS.md: rules/rule_api-guide.md
+README.md: .claude/rules/rule_task-management.md
+README.md: docs/develop/mcp-notion.md
+docs/decisions/0006-corridor-table-airspace-structure.md: ../../database/schema/05-uam.sql
+docs/decisions/0006-corridor-table-airspace-structure.md: ../../database/schema/06-common.sql
+docs/decisions/0009-subway-target-station-whitelist.md: ../../tasks/in-progress/feat-subway-batch-coverage-goyang.md
+docs/decisions/0010-subway-line-overlay-static-geojson.md: ../../tasks/backlog/feat-subway-routes-api.md
+docs/decisions/0012-corridor-altitude-layer-rnp-policy.md: ../../database/schema/05-uam.sql
+docs/decisions/0015-vertiport-parking-slot-landing-pad-dedicated-tables.md: ../../tasks/backlog/vertiport-parking-slots-landing-pads.md
+docs/decisions/0018-vertiport-noise-vibration-webhook.md: ../../database/schema/30-vertiport_noise_vibration_events.sql
+docs/decisions/0023-flight-points-daily-partition-automation.md: ../../database/schema/23-flight_points.sql
+docs/decisions/0023-flight-points-daily-partition-automation.md: ../../database/schema/907-seeding-flight-points-partition.sql
+docs/decisions/0023-flight-points-daily-partition-automation.md: ../../database/seeding/300-flight-operation-data.sql
+docs/decisions/0033-config-secret-encryption.md: ../../tasks/plan/20260914/secure-coding-excluded.md
+docs/decisions/0033-config-secret-encryption.md: ../../tasks/plan/20260914/secure-coding-remediation-20260914.md
+docs/decisions/0035-vworld-layer-generic-feature-table.md: ../../database/schema/05-batch.sql
+docs/decisions/0036-database-root-ssot-generated-deploy-sql.md: ../../.githooks/pre-commit
+docs/decisions/0036-database-root-ssot-generated-deploy-sql.md: ../../.github/workflows/deploy-sql-check.yml
+docs/decisions/0036-database-root-ssot-generated-deploy-sql.md: ../../database/README.md
+docs/decisions/0036-database-root-ssot-generated-deploy-sql.md: ../../deploy/build_deploy_sql.py
+docs/decisions/0036-database-root-ssot-generated-deploy-sql.md: ../../deploy/lxprod/README.md
+docs/deliverables/GDP/GDP-PD-05 컴포넌트 구현 설계서(07.UAM)_현행화/GDP-PD-05 컴포넌트 구현 설계서(07.UAM)_현행화 초안.md: notam.md
+docs/develop/API-guide/alert.md: ../../repos/gygo-svc3d-back-uamms/src/main/java/lx/svcauth/controller/AlertController.java
+docs/develop/API-guide/bus-transit.md: ../database/3차/UAM.v3.batch.ddl.sql
+docs/develop/API-guide/disaster-messages.md: ../database/3차/UAM.v3.batch.ddl.sql
+docs/develop/API-guide/noise-vibration.md: ../../../repos/gygo-database/database/schema/04-batch.sql
+docs/develop/API-guide/notam.md: ../database/3차/UAM.v3.batch.ddl.sql
+docs/develop/API-guide/prohibited-zone.md: ../../../repos/gygo-database/database/schema/04-batch.sql
+docs/develop/API-guide/restricted-zone.md: ../../../repos/gygo-database/database/schema/04-batch.sql
+docs/develop/API-guide/subway-transit.md: ../../../repos/gygo-database/database/seeding/02-seeding_for_busBatch.sql
+docs/develop/API-guide/subway-transit.md: ../database/3차/UAM.v3.batch.ddl.sql
+docs/develop/API-guide/weather.md: ../../../repos/gygo-database/database/schema/04-batch.sql
+docs/develop/deployment/subapp-gzip.md: ../../../deploy/nginx/default.conf
+docs/develop/manual-tests/README.md: ../../../repos/gygo-database/database/schema/05-uam.sql
+docs/develop/manual-tests/README.md: ../../../repos/gygo-database/database/schema/07-migration-corridor-width-radius.sql
+docs/develop/manual-tests/README.md: ../../../repos/gygo-database/database/seeding/03-seeding-corridor-sample-types.sql
+docs/develop/manual-tests/README.md: ../../../repos/gygo-database/database/seeding/08-migration-free-flight-area.sql
+docs/develop/secure-coding/README.md: ../../references/secure-coding/Javascript_시큐어코딩_가이드(2023년_개정본
+docs/develop/secure-coding/README.md: ../../references/secure-coding/Python_시큐어코딩_가이드(2023년_개정본
+docs/develop/secure-coding/README.md: ../../references/secure-coding/extracted/js-secure-coding-2023.txt
+docs/develop/secure-coding/README.md: ../../references/secure-coding/extracted/sw-dev-security-guide-2021.txt
+docs/develop/secure-coding/README.md: ../../references/secure-coding/소프트웨어_개발보안_가이드(2021.12.29
+docs/develop/secure-coding/README.md: ../../references/secure-coding/소프트웨어_보안약점_진단가이드(2021
+docs/develop/secure-coding/README.md: ../../references/secure-coding/홈페이지 SW(웹
+docs/research/simulation2-decisions-20261002/decision-agenda.md: ../../../.ai-workflow/work/tasks/02-경유점-편집.md
+docs/research/simulation2-decisions-20261002/decision-agenda.md: ../../references/UAM-구현자료/250425_고양시 UAM노선(킨텍스-항공대 킨텍스-대덕
+docs/simulation2/corridor.md: ../references/UAM-구현자료/250425_고양시 UAM노선(킨텍스-항공대 킨텍스-대덕
+docs/시큐어-코딩/3차/resolutions/BE/소명.md: ../../../repos/gygo-svc3d-back-uamms
+docs/시큐어-코딩/3차/resolutions/BE/소명.md: ../../../repos/gygo-svc3d-back-uamms/src/main/java/lx/svcauth/util/HttpHeaderUtil.java
+docs/시큐어-코딩/3차/resolutions/BE/소명.md: ../../requests/[로우데이터 보고서]UAM_back_고양시_DT_구축2(8
+docs/시큐어-코딩/3차/resolutions/BE/소명.md: ../../requests/[상세_보고서]UAM_back_고양시_DT_구축2(8
+docs/시큐어-코딩/3차/resolutions/FE/소명.md: ../../../repos/gygo-svc3d-front-uamms
+docs/시큐어-코딩/3차/resolutions/FE/소명.md: ../../../repos/gygo-svc3d-front-uamms/src/pages/simulation/obstacleEditor/obstacleEditor.model.ts
+docs/시큐어-코딩/3차/resolutions/FE/소명.md: ../../requests/[로우데이터 보고서]UAM_front_고양시_DT_구축2(13
+docs/시큐어-코딩/3차/resolutions/FE/소명.md: ../../requests/[상세_보고서]UAM_front_고양시_DT_구축2(12
+simulation2 비행 설계 (경유점 따라 비행, 여러 기체).md: ../20261001/simulation2-데이터-설계.md
+tasks/plan/20260916/secure-coding-password-encryption.md: ../20260914/scure_code_20260914.md
+tasks/plan/20260916/secure-coding-password-encryption.md: ../20260914/secure-coding-excluded.md
+tasks/plan/20260916/secure-coding-password-encryption.md: ../20260914/secure-coding-remediation-20260914.md
+tasks/plan/20261003/db-deploy-cleanup.md: ../../../database/README.md
+tasks/plan/20261003/db-deploy-cleanup.md: ../../../deploy/lxprod/docs/lxprod-deploy-checklist.md
