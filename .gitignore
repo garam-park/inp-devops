@@ -2,3 +2,6 @@
 
 # 외부 참고자료: 용량이 크고(100MB 초과 파일 포함) 외부 산출물이라 커밋하지 않는다.
 .ai-workflow/work/tasks/현장방문대비/10 원천데이터/참고/
+
+# 서브모듈 작업용 worktree (AGENTS.md 'worktree'). 다른 git 저장소의 작업 트리라 커밋하지 않는다.
+.ai-workflow/.worktrees/

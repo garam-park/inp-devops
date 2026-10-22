@@ -7,6 +7,8 @@
 - `ops/<클러스터>`: 클러스터 운영 저장소. 예: `ops/dev0` → innopam/dev0
 - `projects/<제품>`: 제품 저장소. 예: `projects/jeju-ai/repos/gis-sass` → innopam/gis-sass
 - `docs/history/`: 이 저장소에 남기는 작업 기록
+- `.ai-workflow/docs/`: 이 파일에서 참조하는 긴 규칙 문서
+- `.ai-workflow/.worktrees/`: 서브모듈 작업용 worktree (git 에 넣지 않는다)
 
 ## 원칙
 
@@ -23,6 +25,22 @@
 
 - 받기: `git clone --recurse-submodules`. 권한 없는 서브모듈은 건너뛰고 `git submodule update --init <경로>`로 있는 것만 받는다.
 - 원격 최신으로 올리기: `git submodule update --remote <경로>`. 따라가는 브랜치는 `.gitmodules`의 `branch`다.
+
+## worktree
+
+- 새 worktree 는 `.ai-workflow/.worktrees/<저장소 이름>/<브랜치>` 에 만든다. 브랜치 이름의 `/` 는 `-` 로 바꾼다.
+- `git -C <서브모듈>` 안에서는 상대 경로가 서브모듈 기준이 되므로 절대 경로를 준다. 기준을 `origin/develop` 처럼 원격 브랜치로 주면 그 브랜치를 추적하게 되어 push 가 그리로 갈 수 있으니 `--no-track` 을 붙인다.
+
+```sh
+# ws 루트에서
+git -C projects/jeju-ai/apps/jeju-ai-saas-fe worktree add --no-track -b chore/lint-strict \
+  "$PWD/.ai-workflow/.worktrees/jeju-ai-saas-fe/chore-lint-strict" origin/develop
+```
+
+## 규칙 추가
+
+- 이 저장소의 새 규칙이 생기면 이 파일에 적는다. 서브모듈 하나에만 해당하는 규칙은 그 저장소의 `AGENTS.md` 에 둔다.
+- 몇 줄로 끝나지 않는 규칙(절차 · 표 · 예시가 필요한 것)은 `.ai-workflow/docs/<짧은-영문-슬러그>.md` 에 쓰고, 여기에는 한 줄 요약과 링크만 둔다.
 
 ## 작업 기록 (docs/history)
 
