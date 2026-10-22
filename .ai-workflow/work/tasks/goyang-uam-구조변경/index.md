@@ -2,7 +2,7 @@
 
 - 기준: 2026-10-22. `projects/goyang-uam` 은 `develop`(`0b3c78c8`, 0단계 뒤), `projects/porthole` 은 `develop`(`325b9c9`).
 - 요청: `projects/goyang-uam`(innopam/ws-goyang-uam)을 `projects/porthole`(innopam/ws-jeju-porthole)과 같은 "프로젝트 작업 공간" 구조로 **전체 이동**한다. 실행 전에 이 계획을 먼저 세운다.
-- 상태: **1 · 2 · 3단계 끝(10-22, [기록 11](../../../../docs/history/2026/10/22/11.goyang-uam-porthole-layout-step1-3.md)). PR #165 열림, 머지 대기.** 머지 전에 열린 PR 안내([notice-open-prs.md](notice-open-prs.md))를 사용자가 보낸다. 결정 D14 · D15 대기.
+- 상태: **1 · 2 · 3단계 끝(10-22, [기록 11](../../../../docs/history/2026/10/22/11.goyang-uam-porthole-layout-step1-3.md)). PR #165 열림(커밋 6개), 머지 대기.** 머지 전에 열린 PR 안내([notice-open-prs.md](notice-open-prs.md))를 사용자가 보낸다. D14 반영([기록 12](../../../../docs/history/2026/10/22/12.goyang-uam-gitleaks-tracked-files.md)), D15 대기.
 - 함께 읽을 것
   - porthole 의 규칙: [AGENTS.md](../../../../projects/porthole/AGENTS.md), [folder-structure.md](../../../../projects/porthole/.ai-workspace/docs/folder-structure.md), [tasks.md](../../../../projects/porthole/.ai-workspace/docs/tasks.md), [adr.md](../../../../projects/porthole/.ai-workspace/docs/adr.md)
   - goyang-uam 의 지금 규칙: [AGENTS.md](../../../../projects/goyang-uam/AGENTS.md), [README.md](../../../../projects/goyang-uam/README.md)
@@ -205,7 +205,7 @@ ws-goyang-uam/
 | D11 ✅ A (10-22) | `.claude/rules/` 처리 | (A) 규칙 본문을 `.ai-workspace/docs/` 로 옮기고 AGENTS.md 에서 링크, `.claude/claude.md` 삭제, 스킬은 `.claude/skills/` 유지 (B) `.claude/` 전부 그대로 | **A**. porthole 원칙은 "규칙은 도구와 무관한 자리에". `.claude/rules/` 는 Claude Code 만 자동으로 읽는다. 스킬은 Claude Code 전용 기능이라 남긴다 |
 | D12 ✅ C (10-22) | `.env.tsk.example` | (A) `env.tsk.example` 로 이름 변경 (B) `.gitleaks.toml` 에 예외 (C) 삭제 | **C 로 결정**. 조사 결과 읽는 곳이 없다. 설치된 스킬(`~/.claude/skills` 의 `ntn-*` · `inp-*`)과 저장소 안 어디에도 `.env.tsk` · `NOTION_DATABASE_ID` 를 읽는 코드가 없고 `.gitignore` 만 언급한다. `git rm .env.tsk.example`, `.gitignore` 의 `.env.tsk` 줄 삭제(porthole 의 `.env.*` 가 대신 막는다). 디스크의 `.env.tsk` 는 실행 때 지울지 묻는다 |
 | D13 ✅ A (10-22) | 커밋 검사 도입 범위 | (A) 3단계에서 porthole 설정을 그대로 넣고 전체 검사 → 걸리는 옛 문서 폴더는 `ignores` 로 빼고 후속에서 고침 (B) 이번엔 gitleaks pre-commit 만 (C) 도입 안 함 | **A**. porthole 과 같게 가는 것이 요청의 취지다. 단 `mise run lint` 의 이력 전체 gitleaks 결과는 먼저 보고 나서 정한다 |
-| D14 | gitleaks 이력 검사 120건(20 커밋) 처리 | (A) `.gitleaksignore` 에 120건 지문을 적어 `mise run lint` 를 통과시킴 (B) `lint:secrets` 를 이력 대신 작업 트리(`gitleaks dir`, 추적 파일)만 보게 바꿈 (C) 이력을 다시 씀(filter-repo) | **B**. 이력은 이미 push 돼 여러 clone 에 있어 다시 쓸 수 없고, 지문 120개를 적어도 뜻이 없다. 앞으로는 pre-commit 이 막는다. 단 이력의 `.opencode/opencode.json`(커밋 `1ebfc2f5`, 2026-06-01, sky221b9)에 Notion API 토큰이 있다 → **토큰을 폐기(재발급)해야 한다**, 선택지와 무관 |
+| D14 ✅ B (10-22, 커밋 `fff728d0`) | gitleaks 이력 검사 120건(20 커밋) 처리 | (A) `.gitleaksignore` 에 120건 지문을 적어 `mise run lint` 를 통과시킴 (B) `lint:secrets` 를 이력 대신 작업 트리(`gitleaks dir`, 추적 파일)만 보게 바꿈 (C) 이력을 다시 씀(filter-repo) | **B**. 이력은 이미 push 돼 여러 clone 에 있어 다시 쓸 수 없고, 지문 120개를 적어도 뜻이 없다. 앞으로는 pre-commit 이 막는다. 단 이력의 `.opencode/opencode.json`(커밋 `1ebfc2f5`, 2026-06-01, sky221b9)에 Notion API 토큰이 있다 → **토큰을 폐기(재발급)해야 한다**, 선택지와 무관 |
 | D15 | 추적 파일의 비밀값 후보 29건(원자료 `sources/outsides/auth/*`, 카카오톡 csv, 이메일, `12.합사_계정정보.md`, 시큐어코딩 예시, `.env.example`) | (A) 후속 작업에서 파일마다 보고 실제 비밀값은 `[REDACTED:<종류>]` 로 가리고 예시 · 가짜는 `gitleaks:allow` (B) 지금 PR 에서 처리 (C) 그대로 | **A**. porthole 규칙("원자료의 비밀값은 넣기 전에 가린다")이고 사람이 봐야 한다. 이 PR 과 섞지 않는다. `12.합사_계정정보.md` 는 이름부터 계정 정보라 먼저 본다 |
 
 ## 5. 단계별 순서
