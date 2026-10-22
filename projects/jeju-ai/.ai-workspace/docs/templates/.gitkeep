@@ -1,0 +1,5 @@
+# .ai-workspace/docs/templates
+
+제출 양식마다 md 항목을 양식 어느 칸에 채우는지와 생성 방법을 `<양식-슬러그>.md` 로 적는다.
+
+자세히: `.ai-workspace/docs/deliverable.md`
