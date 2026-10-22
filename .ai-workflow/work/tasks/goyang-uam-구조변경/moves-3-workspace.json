@@ -1,0 +1,22 @@
+[
+  {"old": ".ai-workflow/docs/lxprod-deploy-checklist.md", "new": "docs/wiki/systems/deployment/lxprod-deploy-checklist.md", "move": true},
+  {"old": ".ai-workflow/docs/todos/index.md", "new": ".ai-workspace/work/todos.md", "move": true},
+  {"old": ".ai-workflow/work/.archived", "new": ".ai-workspace/work/.archived-tasks", "move": true},
+  {"old": "계획초안.md", "new": ".ai-workspace/work/.archived-tasks/20261014-simulation2/계획초안.md", "move": true},
+  {"old": "temp.md", "new": ".ai-workspace/work/tasks/T001-aircraft-status-code-followup/index.md", "move": true},
+  {"old": "tasks/plan", "new": ".ai-workspace/work/.archived-tasks/plan", "move": true},
+  {"old": "tasks/웹접근성", "new": ".ai-workspace/work/.archived-tasks/웹접근성", "move": true},
+  {"old": "tasks/웹표준", "new": ".ai-workspace/work/.archived-tasks/웹표준", "move": true},
+  {"old": "tasks/증적이미지", "new": ".ai-workspace/work/.archived-tasks/증적이미지", "move": true},
+  {"old": "docs/.agents/디자인가이드", "new": ".ai-workspace/docs/design-guide", "move": true},
+  {"old": ".claude/rules/rule_adr.md", "new": ".ai-workspace/docs/adr.md", "move": true},
+  {"old": ".claude/rules/rule_api-guide.md", "new": ".ai-workspace/docs/api-guide.md", "move": true},
+  {"old": ".claude/rules/rule_subapp.md", "new": ".ai-workspace/docs/subapp.md", "move": true},
+  {"old": ".claude/rules/rule_notion-task-interpretation.md", "new": ".ai-workspace/docs/notion-task.md", "move": true},
+  {"old": ".claude/rules/rule_secure-coding-spring.md", "new": ".ai-workspace/docs/secure-coding/spring.md", "move": true},
+  {"old": ".claude/rules/rule_secure-coding-react.md", "new": ".ai-workspace/docs/secure-coding/react.md", "move": true},
+  {"old": ".claude/rules/rule_secure-coding.md", "new": ".ai-workspace/docs/secure-coding/common.md", "move": true},
+  {"old": ".claude/rules", "new": ".ai-workspace/docs", "move": false},
+  {"old": ".claude/worktrees", "new": ".ai-workspace/.worktrees", "move": false},
+  {"old": ".ai-workflow", "new": ".ai-workspace", "move": true}
+]

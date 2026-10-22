@@ -1,0 +1,212 @@
+[
+  {
+    "old": "docs/decisions/README.md",
+    "new": "docs/ADRs/index.md",
+    "move": true
+  },
+  {
+    "old": "docs/decisions",
+    "new": "docs/ADRs",
+    "move": true
+  },
+  {
+    "old": "docs/develop/API-guide",
+    "new": "docs/wiki/api",
+    "move": true
+  },
+  {
+    "old": "docs/develop/spring-implementation-guide.md",
+    "new": "docs/wiki/guides/spring-implementation-guide.md",
+    "move": true
+  },
+  {
+    "old": "docs/develop/ui-component-guide.md",
+    "new": "docs/wiki/guides/ui-component-guide.md",
+    "move": true
+  },
+  {
+    "old": "docs/develop/design",
+    "new": "docs/wiki/guides/design",
+    "move": true
+  },
+  {
+    "old": "docs/develop/secure-coding",
+    "new": "docs/wiki/guides/secure-coding",
+    "move": true
+  },
+  {
+    "old": "docs/develop/analysis",
+    "new": "docs/wiki/scope/analysis",
+    "move": true
+  },
+  {
+    "old": "docs/develop/UAM_엔터티정의_확장.md",
+    "new": "docs/wiki/scope/UAM_엔터티정의_확장.md",
+    "move": true
+  },
+  {
+    "old": "docs/develop/database",
+    "new": "docs/wiki/systems/database",
+    "move": true
+  },
+  {
+    "old": "docs/develop/deployment",
+    "new": "docs/wiki/systems/deployment",
+    "move": true
+  },
+  {
+    "old": "docs/develop/service-flow.md",
+    "new": "docs/wiki/systems/service-flow.md",
+    "move": true
+  },
+  {
+    "old": "docs/develop/parallel-work-environment.md",
+    "new": "docs/wiki/systems/parallel-work-environment.md",
+    "move": true
+  },
+  {
+    "old": "docs/develop/manual-tests",
+    "new": "docs/wiki/tests/manual",
+    "move": true
+  },
+  {
+    "old": "docs/develop/sample-data",
+    "new": "docs/wiki/specs/sample-data",
+    "move": true
+  },
+  {
+    "old": "docs/simulation2",
+    "new": "docs/wiki/specs/simulation2",
+    "move": true
+  },
+  {
+    "old": "simulation2 비행 설계 (경유점 따라 비행, 여러 기체).md",
+    "new": "docs/wiki/specs/simulation2/flight-design-waypoints.md",
+    "move": true
+  },
+  {
+    "old": "docs/research",
+    "new": "docs/wiki/research",
+    "move": true
+  },
+  {
+    "old": "docs/tasks/20261001",
+    "new": "docs/wiki/specs/sample-data/simulation2-20261001",
+    "move": true
+  },
+  {
+    "old": "docs/tasks",
+    "new": "docs/wiki/specs/sample-data",
+    "move": false
+  },
+  {
+    "old": "docs/UAM-통합테스트-결과",
+    "new": "docs/wiki/tests/integration",
+    "move": true
+  },
+  {
+    "old": "docs/GETTING_STARTED.md",
+    "new": "docs/wiki/systems/getting-started.md",
+    "move": true
+  },
+  {
+    "old": "docs/READMEs/git-lfs-guide.md",
+    "new": "docs/wiki/systems/git-lfs-guide.md",
+    "move": true
+  },
+  {
+    "old": "docs/references/design-guide/SUMMARY.md",
+    "new": "docs/wiki/systems/design-guide.md",
+    "move": true
+  },
+  {
+    "old": "PRODUCT_BRIEF.md",
+    "new": "docs/wiki/scope/product-brief.md",
+    "move": true
+  },
+  {
+    "old": "docs/대화-자료/이메일",
+    "new": "docs/sources/chats/emails",
+    "move": true
+  },
+  {
+    "old": "docs/대화-자료/KakaoTalk_Chat_고양시 스마트시티 인프라셋업지원",
+    "new": "docs/sources/chats/kakao-talks/KakaoTalk_Chat_고양시 스마트시티 인프라셋업지원",
+    "move": true
+  },
+  {
+    "old": "docs/대화-자료/KakaoTalk_Chat_고양시DT_UAM 실무",
+    "new": "docs/sources/chats/kakao-talks/KakaoTalk_Chat_고양시DT_UAM 실무",
+    "move": true
+  },
+  {
+    "old": "docs/대화-자료/KakaoTalk_Chat_[고양시 DT] 개발자 지원 및 소통",
+    "new": "docs/sources/chats/kakao-talks/KakaoTalk_Chat_[고양시 DT] 개발자 지원 및 소통",
+    "move": true
+  },
+  {
+    "old": "docs/대화-자료",
+    "new": "docs/sources/chats",
+    "move": false
+  },
+  {
+    "old": "docs/inbox",
+    "new": "docs/sources/outsides",
+    "move": true
+  },
+  {
+    "old": "docs/partners/client",
+    "new": "docs/sources/outsides/client",
+    "move": true
+  },
+  {
+    "old": "docs/partners/consortiums/inbox",
+    "new": "docs/sources/outsides/consortium",
+    "move": true
+  },
+  {
+    "old": "docs/partners",
+    "new": "docs/sources/outsides",
+    "move": false
+  },
+  {
+    "old": "docs/references",
+    "new": "docs/sources/outsides/references",
+    "move": true
+  },
+  {
+    "old": "docs/시큐어-코딩/가이드",
+    "new": "docs/sources/outsides/references/secure-coding-kisa",
+    "move": true
+  },
+  {
+    "old": "docs/svn.md",
+    "new": "docs/sources/svn.md",
+    "move": true
+  },
+  {
+    "old": "docs/svn",
+    "new": "docs/sources/svn",
+    "move": true
+  },
+  {
+    "old": "docs/시큐어-코딩",
+    "new": "docs/deliverable/secure-coding",
+    "move": true
+  },
+  {
+    "old": "docs/deliverables",
+    "new": "docs/deliverable",
+    "move": true
+  },
+  {
+    "old": "docs/reports",
+    "new": "docs/deliverable/reports",
+    "move": true
+  },
+  {
+    "old": "docs/주간보고",
+    "new": "docs/deliverable/weekly",
+    "move": true
+  }
+]
