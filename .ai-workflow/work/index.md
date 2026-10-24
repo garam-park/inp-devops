@@ -31,7 +31,6 @@
 
 | PR | 내용 | 작업목록 | 병합하면 |
 | --- | --- | --- | --- |
-| [FE #15](https://github.com/innopam/jeju-ai-saas-fe/pull/15) | 화면 상태 처리 리팩터(FE #6) + 회귀 수정 + 린트 엄격도 상향 | FE-039 일부 | FE #6 닫힘, dev 배포 |
 | [FE #16](https://github.com/innopam/jeju-ai-saas-fe/pull/16) | 벡터 타일 렌더링 평가 메모 | FE-040 | 결정 근거로 남음 |
 | [FE #13](https://github.com/innopam/jeju-ai-saas-fe/pull/13) | 형상 증빙(정적분석 · SBOM · 라이선스 리포트) | 없음(CSAP) | BE 는 10-22 에 병합됨 |
 | [FE #14](https://github.com/innopam/jeju-ai-saas-fe/pull/14) | Dependabot: vite 8.2.2 → 8.3.5 | 없음 | 개발 의존성 갱신 |
@@ -39,6 +38,7 @@
 | [BE #8](https://github.com/innopam/jeju-ai-saas-be/pull/8) | 파일 중계 CPU 줄이기(야간 k6, BE #3) | BE-018 후속 | 러너 p95 여유 확보 |
 | [BE #9](https://github.com/innopam/jeju-ai-saas-be/pull/9) | 벡터 타일 전환 조사 메모 | BE-024 | 결정 근거로 남음 |
 
+- **10-24 에 4개 PR 이 병합됐다** (아래 '10-24 에 한 일'). FE #15(화면 상태 처리 리팩터 · FE #6)를 포함한다.
 - BE develop 에 오늘 PR #6(형상 증빙 + certifi 보안 수정)이 들어갔다(`f015e76`). CI 를 통과해 dev 에 반영됐다(api 이미지 `f015e76`, 08:34 Image Updater).
 - 오늘 dev0 스토리지 메모리 상한을 512Mi → 1536Mi 로 올렸다. 동시 접속에서 OOM 이 나는 것을 로컬에서 재현했기 때문이다. dev 에 반영됐다([dev0 기록 10-22/01](../../ops/dev0/docs/history/2026/10/22/01.jeju-ai-saas-storage-memory.md)).
 
@@ -88,6 +88,12 @@
 - FE-027 Edge · Safari 확인: 근거가 없다.
 - BE-011 실제 컨테이너 탈출 시험.
 - 작업목록 정정(아래 5절).
+- **10-24 에 끝난 것** (결정 없이 한 일 — 기록 10-24/03 · 04)
+  - FE #15 병합 — 화면 상태 처리 리팩터(FE #6) + 회귀 수정 + strict 린트. `set-state-in-effect` 예외 0곳.
+  - FE `App.tsx` 계산 규칙을 `src/hooks/` 5개로 분리 + 상태 27개를 5묶음으로 정리 (FE #18, 787줄 → 623줄).
+  - FE 권한 정책을 '레이어 → 역할' 표로 (FE #19). 서버가 집행할 기준이 생겼다.
+  - prototype 파이프라인을 jeju-ai-saas-be 원본과 같은 프로그램으로 맞춤 (Jeju-subsidence-AI #4). gislib.py 는 바이트 동일.
+  - ws: prototype ↔ 제품 저장소 파리티 점검(`mise run check:parity`) + 인증 통합 지점 문서.
 
 ## 5. 작업목록과 실제가 다른 곳
 
@@ -131,6 +137,8 @@
 - [10-22/04](../../docs/history/2026/10/22/04.jeju-ai-saas-pending-decisions.md): 결정 처리 · PR
 - [10-22/05](../../docs/history/2026/10/22/05.work-index-status.md): 이 현황 문서
 - [10-22/07](../../docs/history/2026/10/22/07.jeju-ai-handoff.md): 인계 문서 · 결정 대기 정리, ws push · dev0 스토리지 · FE #17
+- [10-24/03](../../docs/history/2026/10/24/03.jeju-ai-prototype-parity.md): prototype 파이프라인 동기화 + 파리티 점검
+- [10-24/04](../../docs/history/2026/10/24/04.jeju-ai-screen-structure.md): 화면 구조 정리(App.tsx 훅 분리 · 권한 정책표)
 
 ## 부록. 작업별 실제 상태 (108건)
 

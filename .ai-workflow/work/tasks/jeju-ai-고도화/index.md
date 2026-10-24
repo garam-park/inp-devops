@@ -36,6 +36,23 @@
    - 사용자가 다른 순서를 원하면 따른다.
 4. 결정 없이 할 수 있는 일은 4절에 있다.
 
+## 1.5 10-24 에 한 일 (결정 없이 한 것)
+
+'결정이 필요 없는 것만' 골라 진행했다. 기록: [10-24/03](../../../../docs/history/2026/10/24/03.jeju-ai-prototype-parity.md),
+[10-24/04](../../../../docs/history/2026/10/24/04.jeju-ai-screen-structure.md).
+
+| PR | 내용 | 상태 |
+| --- | --- | --- |
+| [FE #15](https://github.com/innopam/jeju-ai-saas-fe/pull/15) | 화면 상태 처리 리팩터(FE #6) · 회귀 수정 · strict 린트 | 병합 `6112005` |
+| [FE #18](https://github.com/innopam/jeju-ai-saas-fe/pull/18) | `App.tsx` 계산 규칙을 `src/hooks/` 5개로 분리, 상태 27개를 5묶음으로 (787 → 623줄) | 병합 `d44c5b5` |
+| [FE #19](https://github.com/innopam/jeju-ai-saas-fe/pull/19) | 권한 정책을 '레이어 → 역할' 표로 (`LAYER_ACCESS` · `EXPORT_ACCESS`) | 병합 `d44c5b5` |
+| [Jeju-subsidence-AI #4](https://github.com/innopam/Jeju-subsidence-AI/pull/4) | prototype 파이프라인을 BE 원본과 같은 프로그램으로 (`gislib.py` 바이트 동일) | 병합 `24d48ce` (base `feature/workspace-layers`) |
+| [ws #1](https://github.com/garam-park/inp-devops/pull/1) | prototype ↔ 제품 저장소 파리티 점검 + 인증 통합 지점 문서 + `.gitmodules` `main → develop` | 병합 `5b2b44d` |
+
+- **E2E(Playwright)는 이 세션에서 못 돌렸다** — 로컬 포트 bind 가 샌드박스에서 막혔다. CI 의 e2e 잡이 대신 확인했다.
+- **prototype 파이프라인은 종단 실행을 못 했다** — 원본 GIS 자료가 기기에 없다. 정적 검사 + 원본과의 바이트 대조로만 검증했다.
+- 새로 생긴 질문: prototype 의 기준 브랜치가 `develop` 인가 `feature/workspace-layers` 인가(13커밋 차이). 결정 대기.
+
 ## 2. 지금 상태
 
 ### 저장소 · 브랜치 (모두 push 됨)
@@ -44,7 +61,7 @@
 
 | 저장소 | 브랜치 · HEAD | 열린 PR | 비고 |
 | --- | --- | --- | --- |
-| FE | `refactor/set-state-in-effect` · `32285fb` | [#15](https://github.com/innopam/jeju-ai-saas-fe/pull/15) | FE #6 리팩터 + 회귀 수정 + strict 린트 병합. 커밋 9개(병합 1) · 파일 45개 |
+| FE | ~~`refactor/set-state-in-effect`~~ | ~~#15~~ | **10-24 에 develop 로 병합**(`6112005`). FE #6 리팩터 + 회귀 수정 + strict 린트 |
 | FE | `docs/vector-tile-rendering` · `71151a1` | [#16](https://github.com/innopam/jeju-ai-saas-fe/pull/16) | FE-040 평가 메모 |
 | FE | `chore/scm-evidence` · `675dfdd` | [#13](https://github.com/innopam/jeju-ai-saas-fe/pull/13) | 형상 증빙(다른 세션 작업) |
 | FE | `dependabot/npm_and_yarn/vite-8.3.5` · `4b9af05`(원격만) | [#14](https://github.com/innopam/jeju-ai-saas-fe/pull/14) | vite 8.2.2 → 8.3.5 |
@@ -54,10 +71,10 @@
 | BE | `docs/vector-tile-research` · `93000a5` | [#9](https://github.com/innopam/jeju-ai-saas-be/pull/9) | BE-024 조사 메모 |
 
 - develop
-  - FE: `7e3d70a`(10-20).
+  - FE: `d44c5b5`(10-24, PR #18 · #19 병합). 그 전 `7e3d70a`(10-20).
   - BE: `f015e76`(10-22, PR #6 형상 증빙 + certifi 2026.10.19 병합).
   - BE **로컬** develop 은 `932af51` 로 origin 보다 3커밋 뒤다. 새 브랜치는 `origin/develop` 에서 `--no-track` 으로 딴다.
-- 7개 PR 모두 CI 성공(SUCCESS · SKIPPED), 병합 가능 상태(CLEAN). 09:25 검토 때 확인했다.
+- 10-24 기준 열린 PR 은 FE #16 · #13 · #14 · BE #7 · #8 · #9 6개. 전부 CI 성공 · 병합 가능 상태.
 - 커밋하지 않은 변경: FE · BE 본 체크아웃 모두 없다.
 - worktree
   - FE · BE · dev0 와 `.ai-workflow/.worktrees` 에는 없다(10-22 에 정리).
@@ -68,7 +85,7 @@
 
 - 이미지(09:24 확인)
   - api: `f015e76`. BE develop 이 dev0 `57997f8`(08:34 Image Updater 자동 커밋)로 반영됐다.
-  - fe: `7e3d70a`. FE #15 가 병합돼야 바뀐다.
+  - fe: 10-24 에 FE #15 · #18 · #19 가 develop 로 병합됐다 — Image Updater 가 develop 을 따라 새 이미지를 붙인다.
 - 스토리지(SeaweedFS 3.97) 메모리 상한
   - 10-22 에 512Mi → 1536Mi 로 올렸다(dev0 `a3ce7e9`).
   - Argo CD Synced · Healthy, 쿼터 limits.memory 1920Mi / 2560Mi.
