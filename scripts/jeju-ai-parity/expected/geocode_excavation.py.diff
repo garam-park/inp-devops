@@ -1,0 +1,49 @@
+--- a/tools/geocode_excavation.py
++++ b/pipeline/geocode_excavation.py
+@@ -6,11 +6,11 @@
+     …(주)소0, 연동 293-57, 굴착)      → 연동 293-57
+     중문동 1322-2번지                  → 중문동 1322-2
+ 
+-브이월드 지오코더로 변환해 `tools/.cache/excavation_geocoded.json` 에 쌓아 둔다.
++브이월드 지오코더로 변환해 `pipeline/.cache/excavation_geocoded.json` 에 쌓아 둔다.
+ 한 번 성공한 주소는 다시 부르지 않으므로 중간에 끊겨도 이어서 돌리면 된다.
+ 
+-    export VITE_VWORLD_KEY=...        # 또는 app/.env.local 에서 자동으로 읽는다
+-    python3 tools/geocode_excavation.py
++    export VWORLD_KEY=...             # 또는 저장소 루트 .env 의 VWORLD_KEY
++    python3 pipeline/geocode_excavation.py
+ """
+ 
+ import collections
+@@ -25,8 +25,8 @@
+ 
+ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+ SRC = "/Users/gyuyoung/Downloads/소다제공gis자료/3. 지하공사 좌표 및 굴착 이력"
+-CACHE = os.path.join(ROOT, "tools", ".cache", "excavation_geocoded.json")
+-OUT = os.path.join(ROOT, "tools", ".cache", "excavation_points.json")
++CACHE = os.path.join(ROOT, "pipeline", ".cache", "excavation_geocoded.json")
++OUT = os.path.join(ROOT, "pipeline", ".cache", "excavation_points.json")
+ 
+ # '동/읍/면/리 + 번지'. 앞에 시군구가 붙어 있으면 함께 잡아 정확도를 올린다.
+ JIBUN = re.compile(r"(?:(제주시|서귀포시)\s*)?([가-힣]+(?:동|읍|면|리))\s*(산?\d+(?:-\d+)?)")
+@@ -34,15 +34,15 @@
+ 
+ 
+ def read_key():
+-    if os.environ.get("VITE_VWORLD_KEY"):
+-        return os.environ["VITE_VWORLD_KEY"]
+-    env = os.path.join(ROOT, "app", ".env.local")
++    if os.environ.get("VWORLD_KEY"):
++        return os.environ["VWORLD_KEY"]
++    env = os.path.join(ROOT, ".env")
+     if os.path.exists(env):
+         with open(env, encoding="utf-8") as fh:
+             for line in fh:
+-                if line.startswith("VITE_VWORLD_KEY="):
++                if line.startswith("VWORLD_KEY="):
+                     return line.split("=", 1)[1].strip()
+-    sys.exit("브이월드 인증키가 없다. app/.env.local 에 VITE_VWORLD_KEY 를 넣어라.")
++    sys.exit("브이월드 인증키가 없다. 저장소 루트 .env 에 VWORLD_KEY 를 넣어라.")
+ 
+ 
+ def find(*keywords):
