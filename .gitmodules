@@ -9,7 +9,7 @@
 [submodule "projects/Jeju-subsidence-AI"]
 	path = projects/jeju-ai/repos/jeju-subsidence-ai
 	url = git@github.com:innopam/Jeju-subsidence-AI.git
-	branch = main
+	branch = develop
 [submodule "projects/official-website"]
 	path = projects/inp/official-website
 	url = git@github.com:innopam/official-website.git
