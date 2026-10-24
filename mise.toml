@@ -15,3 +15,9 @@ depends = ["lint:md"]
 [tasks."lint:md"]
 description = "Markdown (markdownlint-cli2, 규칙은 .markdownlint-cli2.jsonc)"
 run = "git ls-files -z '*.md' | xargs -0 markdownlint-cli2"
+
+# jeju-ai 프로토타입(Jeju-subsidence-AI)과 제품 저장소(jeju-ai-saas-be)의 파리티를 확인한다.
+# 프로토타입은 2026-10-19 분할 후 동결되어 있다 — 원본이 바뀌면 프로토타입도 따라야 한다.
+[tasks."check:parity"]
+description = "jeju-ai 프로토타입 ↔ 제품 저장소 파리티 점검 (레이어 자료 · 파이썬 도구)"
+run = "bash scripts/check-jeju-ai-parity.sh"

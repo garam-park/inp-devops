@@ -1,0 +1,27 @@
+--- a/tools/run_index.py
++++ b/pipeline/run_index.py
+@@ -1,7 +1,10 @@
+ """지수 레이어의 계산 로직을 격리된 컨테이너에서 돌려 결과를 레이어에 넣는다.
+ 
+-    python3 tools/run_index.py jeju/csi
++    python3 pipeline/run_index.py jeju/csi
+ 
++입력과 결과는 로컬 작업 폴더(DATA_DIR, 기본 ./data)에서 읽고 쓴다. 스토리지와는
++`npm --prefix api run storage -- pull|push data` 로 맞춘다.
++
+ 지수 레이어 manifest 의 index 항목이 계약이다.
+     runtime   실행 환경. RUNTIMES 에 있는 이미지만 쓴다 (언어를 늘리려면 여기에 한 줄)
+     entry     레이어 폴더 안의 로직 파일
+@@ -27,7 +30,11 @@
+ import tempfile
+ 
+ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+-ORGS = os.path.join(ROOT, "app", "public", "data", "orgs")
++# 레이어 자료를 읽고 쓰는 로컬 작업 폴더. 스토리지가 원본이고 이 폴더는 사본이다.
++#   npm --prefix api run storage -- pull data   (실행 전)
++#   npm --prefix api run storage -- push data   (실행 후)
++DATA_DIR = os.path.abspath(os.environ.get("DATA_DIR", os.path.join(ROOT, "data")))
++ORGS = os.path.join(DATA_DIR, "orgs")
+ 
+ # 런타임 이름 → 컨테이너 이미지와 실행 명령. 이미지는 태그까지 고정한다.
+ RUNTIMES = {
