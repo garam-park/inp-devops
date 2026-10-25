@@ -1,11 +1,11 @@
 # 작업 현황
 
 - 기준: 2026-10-22 08:35 KST(dev 반영 · 결정 대기 표시는 09:45 에 고침)
-- 출처: [작업목록 xlsx](../../projects/jeju-ai/tasks/지반침하스마트관리시스템_작업목록-V0.1.xlsx)(기준일 10-20)의 108건을 저장소 코드 · git 이력 · GitHub 이슈/PR · 작업 기록과 맞춰 본 실제 상태다. 작업목록의 상태 칸이 아니라 실제를 적었다.
-- jeju-ai 고도화의 인계 · 결정 대기: [tasks/jeju-ai-고도화/index.md](tasks/jeju-ai-고도화/index.md), [결정.md](tasks/jeju-ai-고도화/결정.md). 다음 세션은 여기서 시작한다.
+- 출처: [작업목록 xlsx](../../projects/jeju-ai/docs/sources/outsides/전달자료/지반침하스마트관리시스템_작업목록-V0.1.xlsx)(기준일 10-20)의 108건을 저장소 코드 · git 이력 · GitHub 이슈/PR · 작업 기록과 맞춰 본 실제 상태다. 작업목록의 상태 칸이 아니라 실제를 적었다.
+- jeju-ai 고도화의 인계 · 결정 대기: [projects/jeju-ai](../projects/jeju-ai/.ai-workspace/work/tasks/T114-product-maturity/index.md), [결정.md](../projects/jeju-ai/.ai-workspace/work/tasks/T114-product-maturity/결정.md). 다음 세션은 여기서 시작한다.
 - 다른 작업
-  - CSAP 인증준비: [tasks/CSAP-인증준비/index.md](tasks/CSAP-인증준비/index.md)
-  - 현장방문대비: [tasks/현장방문대비/](tasks/현장방문대비/)
+  - CSAP 인증준비: [projects/jeju-ai](../projects/jeju-ai/.ai-workspace/work/tasks/T113-csap-certification/index.md)
+  - 현장방문대비: [projects/jeju-ai](../projects/jeju-ai/.ai-workspace/work/tasks/T112-site-visit/index.md)
   - goyang-uam 구조변경(porthole 구조로 전체 이동, 계획 단계): [tasks/goyang-uam-구조변경/index.md](tasks/goyang-uam-구조변경/index.md)
   - 이 문서는 그 셋의 현황을 다루지 않는다.
 
@@ -59,7 +59,7 @@
 | --- | --- | --- |
 | 지도 렌더러 · 전달 방식(벡터 타일 여부) | FE-014, FE-042, BE-025, DEVOPS-035 | FE #16 · BE #9 메모, 설계 05 §4-3 |
 | 인증 방식(자체 계정 / OIDC) · 역할 출처 | BE-020, FE-041 | 설계 04 §8, 05 §4-4(발주처 SSO 확인) |
-| DB: dev0 PV · 마이그레이션 도구 · 성명 저장 · 완전삭제 · 버킷명(CSAP 결정 3 · 7 · 9 와 겹침) | BE-021 → BE-022 · BE-023, FE-037 · FE-043 · FE-045, DEVOPS-034 | 설계 04 §5, [결정.md](tasks/jeju-ai-고도화/결정.md) D5 |
+| DB: dev0 PV · 마이그레이션 도구 · 성명 저장 · 완전삭제 · 버킷명(CSAP 결정 3 · 7 · 9 와 겹침) | BE-021 → BE-022 · BE-023, FE-037 · FE-043 · FE-045, DEVOPS-034 | 설계 04 §5, [결정.md](../projects/jeju-ai/.ai-workspace/work/tasks/T114-product-maturity/결정.md) D5 |
 | 레이어 편집 저장 API(누가 · 어디에 저장) | FE-034(예정일 10-21 지남), FE-035 | BE 시트에 해당 작업 행이 없다 |
 | 색 대비: 디자인 토큰 색 | FE-039 일부(FE #5), 야간 Lighthouse 매일 실패(FE #8) | FE #5 선택지 A · B |
 | 품질 게이트 설정 4건 확정 | BE-019(지금 코드가 추천안 그대로라 확정만 하면 닫힘) | BE #2 |
@@ -81,7 +81,7 @@
 
 ## 4. 결정 없이 바로 할 수 있는 것
 
-- 열린 PR 7개: CI 는 통과했다. 리뷰 · 병합 방식과 순서는 결정 대기다([결정.md](tasks/jeju-ai-고도화/결정.md) D2). BE #7 과 #8 은 서로 충돌한다.
+- 열린 PR 7개: CI 는 통과했다. 리뷰 · 병합 방식과 순서는 결정 대기다([결정.md](../projects/jeju-ai/.ai-workspace/work/tasks/T114-product-maturity/결정.md) D2). BE #7 과 #8 은 서로 충돌한다.
 - **BE #3 닫기 조건은 이미 채워졌다.** develop 야간 k6 가 10-21(288.9–292.6 ms)과 10-22(295.7–298.7 ms)에 두 번 연속 300 ms 아래였다. 다만 여유가 1–11 ms 라, 언제 되돌릴지는 결정 대기다(D1, 추천은 BE #8 병합 뒤).
 - DEVOPS-030 모니터링 · 알림: 보류 이유('알림 받을 워크로드 없음')는 지금 맞지 않는다. 다만 설치는 클러스터 변경(메모리 약 1.2–1.5GB, Longhorn PV 10GB)이라 **착수 전 사용자 승인**이 필요하다. Hubble UI(W58)는 따로 결정한다.
 - FE-021 화면 안 도움말 · 산정 모델 설명: 작업목록은 완료지만 실제로 없다.
@@ -182,7 +182,7 @@
 | FE-031 | 예시 레이어(동 중심점) 추가 | 완료 | 끝남 |  |
 | FE-032 | E2E·접근성·웹표준·시각 회귀 | 진행 | 끝남 | 52e71af(Playwright 전환), e8e9beb(axe), e9973e1(html-validate), 9c2a852 + e2e/__snapshots__ PNG 8장, e2e/fixture-server.ts. develop 병합 e9ca15d(10-20). amd64 러너에서 기준 PNG 통과(77d99c0, ci 39388043299). FE #4 닫힘 |
 | FE-033 | 컴포넌트 분리·훅 정리 | 완료 | 끝남 |  |
-| FE-034 | 레이어 순서·표시 편집 UI 설계 | 진행 | 시작 전 | 설계 메모, BE 저장 API 합의, 관련 이슈 모두 없음(ws docs/design/jeju-subsidence-ai, FE·BE README·docs, 이슈 목록 검색). 10-21/09에서 '결정 필요'로 분류. 작업목록의 종료 예정일 10-21이 지남 **막힘:** BE와 워크스페이스 저장 API 요건 합의(결정) |
+| FE-034 | 레이어 순서·표시 편집 UI 설계 | 진행 | 시작 전 | 설계 메모, BE 저장 API 합의, 관련 이슈 모두 없음(projects/jeju-ai docs/wiki/scope/jeju-subsidence-ai, FE·BE README·docs, 이슈 목록 검색). 10-21/09에서 '결정 필요'로 분류. 작업목록의 종료 예정일 10-21이 지남 **막힘:** BE와 워크스페이스 저장 API 요건 합의(결정) |
 | FE-035 | 레이어 순서·표시 편집 UI 구현 | 예정 | 시작 전 | 관련 코드·브랜치·PR 없음. BE 시트에 워크스페이스 저장 API 작업 행이 없음 **막힘:** FE-034 설계, BE 워크스페이스 저장 API |
 | FE-036 | FE CI 게이트·야간 검사 | 예정 | 끝남 | .github/workflows/ci.yml(모든 push → checks·e2e, develop만 build-push), nightly.yml(Lighthouse·k6·ZAP·trivy, 04:00 KST). develop 7e3d70a(10-20), FE #1·#2 닫힘. 야간 39505134831·39683693889는 Lighthouse 단계만 실패(FE #8) |
 | FE-037 | 메타데이터 DB 전환에 맞춘 FE 변경 | 예정 | 시작 전 | FE는 아직 /api/catalog 파일 catalog를 읽음(lib/workspace.ts). 관련 브랜치·이슈 없음 **막힘:** BE-021·BE-022 메타데이터 DB 설계·전환 |
@@ -222,7 +222,7 @@
 | BE-017 | 품질 검사 1–2단계: 도구·훅·린트 | 완료 | 끝남 |  |
 | BE-018 | 품질 검사 3단계: 통합 테스트·CI 게이트·야간 검사 | 진행 | 끝남 | 산출물이 모두 develop 에 있다: docker-compose.test.yml, api/test/integration 16개, api/scripts/fixtures.ts 시드, ci.yml(checks·integration·pipeline → build-push, semgrep), nightly.yml(k6·ZAP·trivy), @fastify/helmet(9823c1d). develop 머지 21cb656·589ac14(10-20). 러너 ci 39388069706 성공. 야간 검사 39496555443·39675051984 성공(ZAP High 0, trivy HIGH·CRITICAL 0). BE #1 은 10-20 에 닫혔다. 남은 BE #2 결정은 BE-019 범위다. |
 | BE-019 | 품질 게이트 마무리 | 예정 | 막힘 | 3개 중 2개는 끝났다. BE #1 은 10-20 에 닫혔다: 러너 ci 39374635323·39375973207, nightly 39374659883·39375982717, 기록 20/09. 깨끗한 클론 재현은 로컬 에이전트가 했다. BE #2 는 댓글 없이 열려 있다. 지금 코드는 이미 추천안 4개 상태다: .prettierrc singleQuote, run_index.py docker 인자 줄 분리, mise ci 에 test:integration 포함, 커버리지 70. 그래서 결정만 하면 코드 변경 없이 닫을 수 있다. **막힘:** BE #2 설정 결정 4건(사용자 결정) |
-| BE-020 | 로그인·인증 API | 예정 | 시작 전 | api 에 인증 코드가 없다(README '권한은 아직 막지 않는다'). 설계 초안만 있다: ws docs/design/jeju-subsidence-ai/04 §8(1차 자체 계정·Argon2id·세션 쿠키·CSRF, 2차 OIDC)과 05 §4-4 열린 결정. 기록 21/09 에서 '결정 필요'로 분류됐다. **막힘:** 결정: 인증 방식(자체 계정/OIDC)과 역할 출처(05 §4-4), 발주처 SSO 확인. FE-041 과 함께 |
+| BE-020 | 로그인·인증 API | 예정 | 시작 전 | api 에 인증 코드가 없다(README '권한은 아직 막지 않는다'). 설계 초안만 있다: projects/jeju-ai docs/wiki/scope/jeju-subsidence-ai/04 §8(1차 자체 계정·Argon2id·세션 쿠키·CSRF, 2차 OIDC)과 05 §4-4 열린 결정. 기록 21/09 에서 '결정 필요'로 분류됐다. **막힘:** 결정: 인증 방식(자체 계정/OIDC)과 역할 출처(05 §4-4), 발주처 SSO 확인. FE-041 과 함께 |
 | BE-021 | 메타데이터 DB 설계 | 예정 | 시작 전 | BE 저장소에 DB 코드·문서가 없다. ws 설계 04 §5 'DB 스키마 초안'(users·roles·sessions·dataset_versions·audit_events 등)은 있다. 그러나 조직·워크스페이스·레이어 표가 없고, 마이그레이션 도구도 'Drizzle 또는 Kysely'(02)로 정해지지 않았다. 기록 21/09 에서 결정 필요로 분류됐다. **막힘:** 결정: 운영 DB 의 PostGIS 가능 여부(발주처·DBA, 05 §5)와 마이그레이션 도구 |
 | BE-022 | 조직·워크스페이스·레이어 DB 전환 | 예정 | 시작 전 | 코드가 없다. catalog 는 아직 스토리지 파일을 훑어 만든다(api/src/catalog.ts). **막힘:** 앞 작업 BE-021(DB 설계)·BE-020(권한 검사용 사용자·역할), FE 관리 화면 전환과 함께 |
 | BE-023 | 작업 기록(감사) 저장 API | 예정 | 시작 전 | 코드가 없다. 설계 04 §5 audit_events·§8 감사, 보존 기간은 05 §4-9(기본 3년 제안, 발주처 확인)에 있다. **막힘:** 앞 작업 BE-020·BE-021, 보존 기간 결정(05 §4-9) |

@@ -20,12 +20,12 @@
 3. 그다음 이 폴더의 기대 diff를 갱신한다.
 
 ```sh
-cd projects/jeju-ai/repos/jeju-subsidence-ai
+cd projects/jeju-ai/apps/jeju-subsidence-ai
 git fetch origin && git checkout develop && git pull
 cd -
 for f in gislib.py build_data.py run_index.py geocode_excavation.py; do
   diff -u --label "a/tools/$f" --label "b/pipeline/$f" \\
-    "projects/jeju-ai/repos/jeju-subsidence-ai/tools/$f" \\
+    "projects/jeju-ai/apps/jeju-subsidence-ai/tools/$f" \\
     "projects/jeju-ai/apps/jeju-ai-saas-be/pipeline/$f" \\
     > "scripts/jeju-ai-parity/expected/$f.diff"
 done

@@ -5,7 +5,8 @@
 ## 구조
 
 - `ops/<클러스터>`: 클러스터 운영 저장소. 예: `ops/dev0` → innopam/dev0
-- `projects/<제품>`: 제품 저장소. 예: `projects/jeju-ai/repos/gis-sass` → innopam/gis-sass
+- `projects/<제품>`: 제품 작업 공간. 예: `projects/jeju-ai` → innopam/ws-jeju-ai
+  제품 안의 코드 저장소는 그 저장소가 자체 `.gitmodules` 로 관리한다(`apps/`).
 - `docs/history/`: 이 저장소에 남기는 작업 기록
 - `.ai-workflow/docs/`: 이 파일에서 참조하는 긴 규칙 문서
 - `.ai-workflow/.worktrees/`: 서브모듈 작업용 worktree (git 에 넣지 않는다)

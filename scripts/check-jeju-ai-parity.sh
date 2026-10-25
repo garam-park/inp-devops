@@ -20,7 +20,7 @@ set -uo pipefail
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 # 기본값은 이 저장소의 서브모듈 경로다. worktree 등 다른 곳을 볼 때는 환경변수로 넘긴다.
 #   JEJU_AI_PROTO_DIR  JEJU_AI_BE_DIR  JEJU_AI_PARITY_EXPECTED
-PROTO="${JEJU_AI_PROTO_DIR:-$ROOT/projects/jeju-ai/repos/jeju-subsidence-ai}"
+PROTO="${JEJU_AI_PROTO_DIR:-$ROOT/projects/jeju-ai/apps/jeju-subsidence-ai}"
 BE="${JEJU_AI_BE_DIR:-$ROOT/projects/jeju-ai/apps/jeju-ai-saas-be}"
 EXPECTED="${JEJU_AI_PARITY_EXPECTED:-$ROOT/scripts/jeju-ai-parity/expected}"
 

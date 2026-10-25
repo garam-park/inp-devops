@@ -2,26 +2,10 @@
 	path = ops/dev0
 	url = git@github.com:innopam/dev0.git
 	branch = main
-[submodule "projects/gis-sass"]
-	path = projects/jeju-ai/repos/gis-sass
-	url = git@github.com:innopam/gis-sass.git
-	branch = develop
-[submodule "projects/Jeju-subsidence-AI"]
-	path = projects/jeju-ai/repos/jeju-subsidence-ai
-	url = git@github.com:innopam/Jeju-subsidence-AI.git
-	branch = develop
 [submodule "projects/official-website"]
 	path = projects/inp/official-website
 	url = git@github.com:innopam/official-website.git
 	branch = release
-[submodule "projects/jeju-ai-saas-be"]
-	path = projects/jeju-ai/apps/jeju-ai-saas-be
-	url = git@github.com:innopam/jeju-ai-saas-be.git
-	branch = develop
-[submodule "projects/jeju-ai-saas-fe"]
-	path = projects/jeju-ai/apps/jeju-ai-saas-fe
-	url = git@github.com:innopam/jeju-ai-saas-fe.git
-	branch = develop
 [submodule "ops/gov-ncloud"]
 	path = ops/gov-ncloud
 	url = git@github.com:inp-solution/gov-ncloud.git
@@ -34,3 +18,7 @@
 	path = projects/goyang-uam
 	url = git@github.com:innopam/ws-goyang-uam.git
 	branch = develop
+[submodule "projects/jeju-ai"]
+	path = projects/jeju-ai
+	url = git@github.com:innopam/ws-jeju-ai.git
+	branch = main
