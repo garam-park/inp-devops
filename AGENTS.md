@@ -8,7 +8,7 @@
 - `projects/<제품>`: 제품 작업 공간. 예: `projects/jeju-ai` → innopam/ws-jeju-ai
   제품 안의 코드 저장소는 그 저장소가 자체 `.gitmodules` 로 관리한다(`apps/`).
 - `docs/history/`: 이 저장소에 남기는 작업 기록
-- `.ai-workflow/docs/`: 이 파일에서 참조하는 긴 규칙 문서
+- `.ai-workflow/docs/`: 이 파일에서 참조하는 긴 규칙 문서 (지금 없다 — 제품 규칙은 그 제품 저장소에 있다)
 - `.ai-workflow/.worktrees/`: 서브모듈 작업용 worktree (git 에 넣지 않는다)
 
 ## 원칙
@@ -44,7 +44,7 @@ git -C projects/jeju-ai/apps/jeju-ai-saas-fe worktree add --no-track -b chore/li
 
 - 이 저장소의 새 규칙이 생기면 이 파일에 적는다. 서브모듈 하나에만 해당하는 규칙은 그 저장소의 `AGENTS.md` 에 둔다.
 - 몇 줄로 끝나지 않는 규칙(절차 · 표 · 예시가 필요한 것)은 `.ai-workflow/docs/<짧은-영문-슬러그>.md` 에 쓰고, 여기에는 한 줄 요약과 링크만 둔다.
-- [jeju-ai 인증 · 서버 저장 통합 지점](.ai-workflow/docs/jeju-ai-auth-integration.md): 인증 · 서버 저장을 붙일 때 손댈 곳 — 브라우저에 남아 있는 것 6곳과 미정인 결정 4개.
+- [jeju-ai 인증 · 서버 저장 통합 지점](projects/jeju-ai/.ai-workspace/docs/jeju-ai-auth-integration.md): 인증 · 서버 저장을 붙일 때 손댈 곳 — 브라우저에 남아 있는 것 6곳과 미정인 결정 4개. (ws-jeju-ai 저장소로 옮겨갔다)
 - [jeju-ai 파리티 점검](scripts/jeju-ai-parity/expected/README.md): 프로토타입(Jeju-subsidence-AI) ↔ 제품 저장소(jeju-ai-saas-be)가 어긋났는지 본다 — `mise run check:parity`.
 
 ## 작업 기록 (docs/history)
