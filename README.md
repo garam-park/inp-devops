@@ -10,6 +10,10 @@ Innopam 작업 공간. 클러스터 운영 저장소와 제품 저장소를 서�
 - `projects/goyang-uam` → innopam/ws-goyang-uam (고양 UAM)
 - `projects/jeju-ai` → innopam/ws-jeju-ai (제주 지반침하 통합관리 작업 공간)
 
+운영 공간 준비 중:
+
+- [ops/pm6f](ops/pm6f/README.md): 회사 Proxmox. `internal-services` Pool 운영 계획부터 준비하며 아직 서브모듈은 아니다.
+
 받기:
 
 ```sh
